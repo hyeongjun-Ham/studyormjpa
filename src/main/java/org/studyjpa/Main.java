@@ -18,13 +18,12 @@ public class Main {
         try {
 
             //영속
+            Member member = new Member(200L, "member200");
+            em.persist(member);
 
-            Member member = em.find(Member.class, 150L);
-            member.setName("ZZZZZ");
+            em.flush();
 
             System.out.println("==================");
-
-
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
