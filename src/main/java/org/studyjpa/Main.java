@@ -16,16 +16,13 @@ public class Main {
         tx.begin();
 
         try {
+            Member member = new Member();
+            member.setId(1L);
+            member.setUsername("A");
+            member.setRoleType(RoleType.ADMIN);
 
+            em.persist(member);
             //영속
-            Member member = em.find(Member.class, 150L);
-            member.setName("AAAAA");
-
-            em.clear();
-
-            Member member1 = em.find(Member.class, 150L);
-
-            System.out.println("==================");
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
