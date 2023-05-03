@@ -16,32 +16,16 @@ public class Main {
         tx.begin();
 
         try {
-            Team team = new Team();
-            team.setName("TeamA");
-            em.persist(team);
 
             Member member = new Member();
             member.setUsername("member1");
-            member.changeTeam(team);
+
             em.persist(member);
+            Team team = new Team();
+            team.setName("teamA");
+            team.getMembers().add(member);
 
-            //양쪽에 있으면 문제생길 수 있음
-//            team.addMember(member);
-
-//            em.flush();
-//            em.clear();
-
-            Team findTeam = em.find(Team.class, team.getId());
-            List<Member> members = findTeam.getMembers();
-
-            for (Member m : members) {
-                System.out.println("m.getUsername() = " + m.getUsername());
-
-            }
-
-
-
-
+            em.persist(team);
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
