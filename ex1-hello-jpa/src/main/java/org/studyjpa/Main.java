@@ -16,16 +16,13 @@ public class Main {
         tx.begin();
 
         try {
+            Movie movie = new Movie();
+            movie.setDirector("aaa");
+            movie.setActor("bbb");
+            movie.setName("바람");
+            movie.setPrice(10000);
+            em.persist(movie);
 
-            Member member = new Member();
-            member.setUsername("member1");
-
-            em.persist(member);
-            Team team = new Team();
-            team.setName("teamA");
-            team.getMembers().add(member);
-
-            em.persist(team);
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
