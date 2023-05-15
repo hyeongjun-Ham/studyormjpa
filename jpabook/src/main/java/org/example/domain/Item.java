@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Item {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn
+public abstract class Item {
 
     @Id
     @GeneratedValue
@@ -16,7 +18,7 @@ public class Item {
     private int price;
     private int stockQuantity;
 
-    @ManyToMany(mappedBy = "items;")
+    @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
 
     public Long getId() {

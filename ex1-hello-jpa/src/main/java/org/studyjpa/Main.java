@@ -21,7 +21,11 @@ public class Main {
             movie.setActor("bbb");
             movie.setName("바람");
             movie.setPrice(10000);
+
             em.persist(movie);
+
+            em.flush();
+            em.clear();
 
             tx.commit();
         } catch (Exception e) {
