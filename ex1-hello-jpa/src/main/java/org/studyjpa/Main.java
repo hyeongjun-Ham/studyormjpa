@@ -24,11 +24,9 @@ public class Main {
 
             em.persist(movie);
 
-            em.flush();
-            em.clear();
-
             tx.commit();
         } catch (Exception e) {
+            e.printStackTrace();
             tx.rollback();
         } finally {
             em.close();
