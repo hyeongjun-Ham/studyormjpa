@@ -1,8 +1,8 @@
 package thread.control;
 
-import thread.util.MyLogger;
+import util.MyLogger;
 
-import static thread.util.MyLogger.*;
+import static util.MyLogger.*;
 
 public class ThreadStateMain {
     public static void main(String[] args) throws InterruptedException {

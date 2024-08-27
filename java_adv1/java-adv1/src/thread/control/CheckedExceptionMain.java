@@ -1,6 +1,6 @@
 package thread.control;
 
-import static thread.util.ThreadUtils.sleep;
+import static util.ThreadUtils.sleep;
 
 public class CheckedExceptionMain {
     public static void main(String[] args) throws Exception {

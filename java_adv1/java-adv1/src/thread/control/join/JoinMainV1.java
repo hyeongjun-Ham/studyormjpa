@@ -1,9 +1,9 @@
 package thread.control.join;
 
-import thread.util.MyLogger;
+import util.MyLogger;
 
-import static thread.util.MyLogger.*;
-import static thread.util.ThreadUtils.sleep;
+import static util.MyLogger.*;
+import static util.ThreadUtils.sleep;
 
 public class JoinMainV1 {
     public static void main(String[] args) {
