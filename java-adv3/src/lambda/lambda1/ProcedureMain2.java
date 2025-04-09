@@ -1,6 +1,6 @@
-package lamda.lamda1;
+package lambda.lambda1;
 
-import lamda.Procedure;
+import lambda.Procedure;
 
 public class ProcedureMain2 {
 

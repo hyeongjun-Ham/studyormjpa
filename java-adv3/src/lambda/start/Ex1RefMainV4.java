@@ -1,10 +1,10 @@
-package lamda.start;
+package lambda.start;
 
-import lamda.Procedure;
+import lambda.Procedure;
 
 import java.util.Random;
 
-public class Ex1RefMain {
+public class Ex1RefMainV4 {
 
     public static void hello(Procedure procedure) {
         long startNs = System.nanoTime();
@@ -15,29 +15,15 @@ public class Ex1RefMain {
         System.out.println("실행 시간: " + (endNs - startNs) + "ns");
     }
 
-    static class Dice implements Procedure {
-
-        @Override
-        public void run() {
+    public static void main(String[] args) {
+        hello(() -> {
             int randomValue = new Random().nextInt(6) + 1;
             System.out.println("주사위 = " + randomValue);
-        }
-    }
-
-    static class Sum implements Procedure {
-        @Override
-        public void run() {
+        });
+        hello(() -> {
             for (int i = 1; i <= 3; i++) {
                 System.out.println("i = " + i);
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        Procedure dice = new Dice();
-        Procedure sum = new Sum();
-
-        hello(dice);
-        hello(sum);
+        });
     }
 }
